@@ -2,32 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html, body {
+    /* overflow: hidden; */
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+    overflow: hidden;
+    width: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    height: 100%;
+    position: fixed;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.holderWrapper {
+    @apply absolute w-full h-full flex justify-center items-center top-0 left-0
+}
+
+.contentHolder {
+    @apply lg:w-[98%] md:w-[97%] w-11/12 h-[96%] border border-white border-opacity-30 p-3
+}
+
+.fly-in-l-r {
+    animation: a-fly-in-l-r 380ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards;
+}
+
+.fly-out-l-r {
+    animation: a-fly-out-l-r 380ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards;
+}
+
+.fly-in-r-l {
+    animation: a-fly-in-r-l 380ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards;
+}
+
+.fly-out-r-l {
+    animation: a-fly-out-r-l 380ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards;
+}
+
+@keyframes a-fly-in-l-r {
+    from {
+        transform: translateX(-100vh);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes a-fly-out-r-l {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100vh);
+    }
+}
+
+@keyframes a-fly-in-r-l {
+    from {
+        transform: translateX(100vh);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes a-fly-out-l-r {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100vh);
+    }
 }
