@@ -1,0 +1,14 @@
+{
+    "downloads": [
+        {
+            "url": "cube-shooter",
+            "downloads": [
+                {
+                    "type": "Windows",
+                    "download": "/download-assets/game.zip",
+                    "name": "game.zip"
+                }
+            ]
+        }
+    ]
+}
