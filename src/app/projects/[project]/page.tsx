@@ -9,6 +9,16 @@ const manrope = Manrope({
     subsets:['latin'],
 });
 
+// static website
+export async function generateStaticParams()
+{
+    return ProjectData.projects.map((p:Project) => {
+        return {
+            project: p.url
+        }
+    })
+}
+
 type Props = {
     params: {
         project: string;
@@ -26,7 +36,7 @@ export default function ProjectPage({params}:Props)
             <main className="contentHolder bg-bg-color/90 overflow-y-auto overflow-x-hidden">
                 <div className="h-full lg:w-2/3 md:w-10/12 w-full ml-auto mr-auto ">
                     <img src={proj.image} className="object-cover w-full h-[calc(100%*7/12)] rounded-3xl ml-auto mr-auto"/>
-                    <Heading className="pt-4">{proj.name}</Heading>
+                    <Heading className="pt-4 md:text-5xl" size="4xl">{proj.name}</Heading>
                     <table className="m-3">
                         <tbody>
                             <tr>

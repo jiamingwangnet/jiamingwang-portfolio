@@ -22,7 +22,7 @@ export default function Navbar()
 
     const toggle = useCallback(() => {
         setShowMenu(!showMenu);
-    }, [showMenu, setShowMenu, mlist])
+    }, [showMenu, setShowMenu])
 
     const path = usePathname();
     

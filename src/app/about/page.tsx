@@ -1,6 +1,6 @@
 import "../globals.css"
 import Image from "next/image";
-import photo from "../../resources/IMG_2429.JPG";
+import photo from "@/resources/IMG_2429.jpg";
 import { Manrope } from 'next/font/google';
 import Heading from "@/components/Heading/Heading";
 import { Metadata } from 'next';

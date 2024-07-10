@@ -6,6 +6,14 @@ import Heading from "@/components/Heading/Heading";
 import { Manrope } from "next/font/google";
 import OutboundLink from "@/components/OutboundLink/OutboundLink";
 
+// static website
+export async function generateStaticParams()
+{
+    return ProjectData.projects.map((p:Project) => ({
+        project: p.url
+    }));
+}
+
 const manrope = Manrope({
     subsets:['latin'],
 });
@@ -26,7 +34,7 @@ export default function ProjModal({params}:Props)
         <Modal>
             <>
                 <img src={proj.image} className="object-cover w-full h-1/2 md:h-3/6 rounded-3xl ml-auto mr-auto"/>
-                <Heading className="pt-4">{proj.name}</Heading>
+                <Heading className="pt-4 md:text-5xl" size="4xl">{proj.name}</Heading>
                 <table className="m-3">
                     <tbody>
                         <tr>

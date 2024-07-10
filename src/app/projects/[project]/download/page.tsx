@@ -1,11 +1,8 @@
-"use client"
-
 import Heading from "@/components/Heading/Heading";
 import Downloads from "./_download-data/downloads.json";
 import IDownload from "./_download-data/interface";
 import ProjectData from "@/app/projects/_data/projects.json";
 import Project from "@/app/projects/_data/interface";
-import { useEffect } from "react";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -14,14 +11,21 @@ type Props = {
     }
 }
 
+// static website
+export async function generateStaticParams()
+{
+    return ProjectData.projects.map((p:Project) => {
+        return {
+            project: p.url
+        }
+    })
+}
 
 export default function Download({params}:Props)
 {
-    useEffect(() => {
-        if(ProjectData.projects.find((proj:Project) => {
-            return proj.url === params.project;
-        }) === undefined) notFound();
-    });
+    if(ProjectData.projects.find((proj:Project) => {
+        return proj.url === params.project;
+    }) === undefined) notFound();
 
     return (
         <>
@@ -36,7 +40,7 @@ export default function Download({params}:Props)
                         Downloads.downloads.find((dl:IDownload) => {
                             return dl.url === params.project;
                         })?.downloads.map(dltype => {
-                            return <li>{dltype.type}: <a className="m-4 text-lg text-highlight-2 underline underline-offset-4" 
+                            return <li key={dltype.type}>{dltype.type}: <a className="m-4 text-lg text-highlight-2 underline underline-offset-4" 
                             href={dltype.download} target="_blank" rel="noopener noreferrer">{dltype.name}</a></li>
                         })
                     }

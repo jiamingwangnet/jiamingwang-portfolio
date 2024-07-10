@@ -28,7 +28,7 @@ export default function Snake()
 
             setLoading(false);
         });    
-    }, [])
+    }, [renderGame])
 
     return (
         <>
