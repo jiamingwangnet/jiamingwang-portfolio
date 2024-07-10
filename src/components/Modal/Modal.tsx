@@ -22,13 +22,13 @@ export default function Modal({children, zindex=70}:{children:React.ReactNode,zi
                     e.stopPropagation();
                     e.nativeEvent.stopImmediatePropagation();
                 }}
-                className="relative p-3 overflow-y-auto h-[calc(100%-50px)] lg:w-2/3 md:w-10/12 w-[calc(100%-20px)] bg-bg-color rounded-xl shadow-2xl border border-white/20">
+                className="relative p-3 h-[calc(100%-50px)] lg:w-2/3 md:w-10/12 w-[calc(100%-20px)] bg-bg-color rounded-xl shadow-2xl border border-white/20">
                 <span className="absolute right-4 text-3xl w-8 h-8 transition hover:bg-white/30 text-center rounded-full cursor-pointer"
                     onClick={e => {
                         router.back();
                     }}
                 >&times;</span>
-                {children}
+                <div className="overflow-y-auto h-full w-full">{children}</div>
             </div>
         </div>
     )
