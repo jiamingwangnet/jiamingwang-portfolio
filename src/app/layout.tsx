@@ -10,7 +10,10 @@ const sourcesans3 = Source_Sans_3({
 })
 
 export const metadata: Metadata = {
-  title: "Jiaming Wang",
+  title: {
+    default: "Jiaming Wang",
+    template: "Jiaming Wang | %s"
+  },
   description: "Jiaming's Website",
 };
 

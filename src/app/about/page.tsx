@@ -3,6 +3,11 @@ import Image from "next/image";
 import photo from "../../resources/IMG_2094C.jpg";
 import { Manrope } from 'next/font/google';
 import Heading from "@/components/Heading/Heading";
+import { Metadata } from 'next';
+
+export const metadata:Metadata = {
+    title: "About"
+}
 
 const manrope = Manrope({
     subsets:['latin'],

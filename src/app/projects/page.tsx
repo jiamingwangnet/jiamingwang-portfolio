@@ -18,6 +18,7 @@ const manrope = Manrope({
 export default function Projects()
 {
     const [projImageStates, setProjImageStates] = useState<boolean[]>([]);
+    const [hasHovered, setHasHovered] = useState<boolean>(false);
     const projImageMap = useRef<{[key:string]:number}>({}); // change to array????
 
     const currentImage = useRef<number>(-1); 
@@ -27,6 +28,8 @@ export default function Projects()
      }, []);
 
     const onHover = useCallback((projUrl: string) => {
+        setHasHovered(true);
+
         const newState = [...projImageStates];
         newState[projImageMap.current[projUrl]] = true;
 
@@ -40,22 +43,25 @@ export default function Projects()
     return (
         <div className="holderWrapper overflow-x-hidden">
             <main className="contentHolder bg-bg-color/30 overflow-y-hidden overflow-x-hidden" style={{paddingTop:"4.75rem"}}>
-                <div className='w-full h-full'>
+                <div className='w-11/12 h-full mr-auto ml-auto'>
                     <Heading style={{animation: FlyInLR("0ms")}}>Projects</Heading>
-                    <div className='flex md:justify-between md:flex-row-reverse justify-start flex-wrap md:flex-nowrap h-[calc(100%-4.75rem-3.75rem)]'>
-                        <ul className='list-none md:h-full md:flex-shrink-0 md:flex-grow-0 md:basis-1/2 md:w-auto h-full w-full'>
-                            {
-                                ProjectData.projects.map((proj:Project, idx:number) => {
-                                    return (
-                                        <li className='md:text-4xl text-3xl m-5 projlist' onMouseOver={() => {onHover(proj.url)}}
-                                        style={{animation: FlyInRL(`${idx * 200}ms`)}}
-                                        key={proj.url}>
-                                            <Link href={`/projects/${proj.url}`}>{proj.name}</Link>
-                                        </li>
-                                    )
-                                })
-                            }
-                        </ul>
+                    <div className='flex md:justify-between md:flex-row-reverse justify-start flex-wrap md:flex-nowrap h-[calc(100%-4.75rem)]'>
+                        <div className='overflow-hidden md:h-full md:flex-shrink-0 md:flex-grow-0 md:basis-1/2 md:w-auto h-full w-full'>
+                            <ul className='list-none  h-full w-full overflow-y-auto overflow-x-hidden 
+                                            pr-[20px] box-content'>
+                                {
+                                    ProjectData.projects.map((proj:Project, idx:number) => {
+                                        return (
+                                            <li className='md:text-4xl text-3xl m-5 projlist transition-all hover:tracking-widest' onMouseOver={() => {onHover(proj.url)}}
+                                            style={{animation: FlyInRL(`${idx * 100}ms`),transform:"translateX(100vw)"}}
+                                            key={proj.url}>
+                                                <Link href={`/projects/${proj.url}`}>{proj.name}</Link>
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                        </div>
                         <div className='md:grid hidden w-1/2'>
                             {
                                 ProjectData.projects.map((proj:Project, idx:number) => {
@@ -63,10 +69,10 @@ export default function Projects()
 
                                     return (
                                         <img key={proj.url} src={proj.image} alt="display" 
-                                        className="none md:block h-auto w-full object-cover col grid-rows-1 rounded-2xl" 
+                                        className="md:block h-full w-full object-cover col grid-rows-1 rounded-2xl" 
                                         style={{
                                             animation: projImageStates[idx] ? "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeIn" : 
-                                            "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeOut",
+                                            (hasHovered ? "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeOut" : ""),
                                             visibility: "hidden",
                                             opacity: 0,
                                             gridColumn: 1,

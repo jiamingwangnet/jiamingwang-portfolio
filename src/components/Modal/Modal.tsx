@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import "@/app/globals.css"
+import { FlyInLR } from "@/app/Animations";
 
 export default function Modal({children, zindex=70}:{children:React.ReactNode,zindex?:number})
 {
@@ -16,6 +17,7 @@ export default function Modal({children, zindex=70}:{children:React.ReactNode,zi
             }}
         >
             <div 
+                style={{animation: FlyInLR("0ms", "350ms")}}
                 onClick={e => {
                     e.stopPropagation();
                     e.nativeEvent.stopImmediatePropagation();

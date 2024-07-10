@@ -4,6 +4,7 @@ import "../../app/palette.css";
 import "./style.css";
 import Image from "next/image"
 import BarSVG from "/public/assets/bar.svg"
+import Logo from "/public/assets/logo.svg";
 import { RefObject, useCallback, useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -34,7 +35,16 @@ export default function Navbar()
             <div className="flex justify-center h-12 lg:pt-5">
                 <div className="m-2 flex items-center justify-between w-[96%] z-30">
                     <div>
-                        LOGO
+                        <Link href="/">
+                            <Image 
+                                priority
+                                src={Logo}
+                                alt={"Logo"}
+                                className="m-3"
+                                width={35}
+                                height={35}
+                            />
+                        </Link>
                     </div>
 
                     <div>
