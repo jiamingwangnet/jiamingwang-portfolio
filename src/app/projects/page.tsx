@@ -65,7 +65,7 @@ export default function Projects()
                                     ProjectData.projects.map((proj:Project, idx:number) => {
                                         return (
                                             <li className='md:text-4xl text-3xl m-5 projlist transition-all hover:tracking-widest' onMouseOver={() => {onHover(proj.url)}}
-                                            style={{animation: FlyInRL(`${idx * 100}ms`),transform:"translateX(100vw)"}}
+                                            style={{animation: FlyInRL(`${idx * 50}ms`),transform:"translateX(100vw)"}}
                                             key={proj.url}>
                                                 <Link href={`/projects/${proj.url}`}>{proj.name}
                                                     <div className='text-lg relative'>{proj.type[0]}</div>

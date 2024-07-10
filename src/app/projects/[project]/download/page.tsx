@@ -1,8 +1,12 @@
+"use client"
+
 import Heading from "@/components/Heading/Heading";
 import Downloads from "./_download-data/downloads.json";
 import IDownload from "./_download-data/interface";
 import ProjectData from "@/app/projects/_data/projects.json";
 import Project from "@/app/projects/_data/interface";
+import { useEffect } from "react";
+import { notFound } from "next/navigation";
 
 type Props = {
     params: {
@@ -13,6 +17,12 @@ type Props = {
 
 export default function Download({params}:Props)
 {
+    useEffect(() => {
+        if(ProjectData.projects.find((proj:Project) => {
+            return proj.url === params.project;
+        }) === undefined) notFound();
+    });
+
     return (
         <>
             <div className="lg:w-2/3 md:w-10/12 w-full ml-auto mr-auto">

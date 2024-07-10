@@ -35,6 +35,24 @@
             "link": "https://github.com/jiamingwangnet/WontonEngine",
             "date": "12/9/2023",
             "type": ["Game Engine", "Graphics", "Game", "In Progress"]
+        },
+        {
+            "url":"cube-shooter",
+            "name":"Cube Shooter",
+            "description": "Created as a use-case for my custom dungeon generator. The game consists of shooting down all enemies in a dungeon to win.",
+            "image": "/assets/images/cubeshooter.png",
+            "link": "/projects/cube-shooter/download",
+            "date": "3/7/2022",
+            "type": ["Game"]
+        },
+        {
+            "url":"lights-out",
+            "name":"Lights Out",
+            "description": "Made for a school game development competition with the theme \"Lights Out\". This game came first place.",
+            "image": "/assets/images/lightsout.png",
+            "link": "/projects/lights-out/download",
+            "date": "23/2/2022",
+            "type": ["Game", "Game Jam"]
         }
     ]
 }

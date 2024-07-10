@@ -4,9 +4,24 @@
             "url": "cube-shooter",
             "downloads": [
                 {
-                    "type": "Windows",
-                    "download": "/download-assets/game.zip",
-                    "name": "game.zip"
+                    "type": "Windows x64",
+                    "download": "/assets/downloads/Cube_Shooter_Windows_x64.zip",
+                    "name": "Cube_Shooter_Windows_x64.zip"
+                }
+            ]
+        },
+        {
+            "url": "lights-out",
+            "downloads": [
+                {
+                    "type": "Windows x64",
+                    "download": "/assets/downloads/LightsOut.zip",
+                    "name": "LightsOut.zip"
+                },
+                {
+                    "type": "MacOS",
+                    "download": "/assets/downloads/LightsOut_Apple.zip",
+                    "name": "LightsOut_Apple.zip"
                 }
             ]
         }
