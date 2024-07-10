@@ -7,6 +7,11 @@ import BarSVG from "/public/assets/bar.svg"
 import { RefObject, useCallback, useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({
+    subsets: ['latin']
+})
 
 export default function Navbar()
 {
@@ -53,19 +58,19 @@ export default function Navbar()
                                     "close 480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards",display: 'flex',visibility:'hidden'}}>
                 <div className="flex items-center w-full h-full pl-[10%] bg-[#00000098]">
                     <ul className="list-none items-center h-fit" ref={mlist}>
-                    <li className="text-5xl mb-6 transition-all hover:tracking-widest" 
+                    <li className={`text-5xl mb-6 transition-all hover:tracking-widest ${manrope.className}`} 
                             style={{animation: 
                             showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards" : 
                             "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 0ms forwards", transform: "translateY(-100vh)"}}><Link href="/">Home</Link></li>
-                        <li className="text-5xl mb-6 transition-all hover:tracking-widest" 
+                        <li className={`text-5xl mb-6 transition-all hover:tracking-widest ${manrope.className}`} 
                             style={{animation: 
                             showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 100ms forwards" : 
                             "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 100ms forwards", transform: "translateY(-100vh)"}}><Link href="/about">About Me</Link></li>
-                        <li className="text-5xl mb-6 transition-all hover:tracking-widest" 
+                        <li className={`text-5xl mb-6 transition-all hover:tracking-widest ${manrope.className}`} 
                             style={{animation: 
                             showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 200ms forwards" : 
                             "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 200ms forwards", transform: "translateY(-100vh)"}}><Link href="/projects">Projects</Link></li>
-                        <li className="text-5xl mb-6 transition-all hover:tracking-widest" 
+                        <li className={`text-5xl mb-6 transition-all hover:tracking-widest ${manrope.className}`} 
                             style={{animation: 
                             showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 300ms forwards" : 
                             "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 300ms forwards", transform: "translateY(-100vh)"}}><Link href="/contact">Contact</Link></li>

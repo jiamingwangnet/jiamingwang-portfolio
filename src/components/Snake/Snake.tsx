@@ -18,6 +18,7 @@ export default function Snake()
     },[]);
 
     useEffect(() => {
+        // TODO: use getStaticProps for fetching
         game.current.InitSystems(container).then(() => {
             if(!game.current.data.fetched) return;
 

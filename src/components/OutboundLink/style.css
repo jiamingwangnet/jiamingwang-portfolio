@@ -1,0 +1,15 @@
+.linkt {
+    color: var(--highlight-1);
+}
+
+.linkt > span::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0.6em 0.6em 0;
+    border-color: transparent var(--highlight-1) transparent transparent;
+    position:relative;
+    bottom: 0.3em;
+  }

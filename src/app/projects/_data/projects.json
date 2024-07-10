@@ -1,0 +1,22 @@
+{
+    "projects": [
+        {
+            "url": "project-1",
+            "name": "Project 1",
+            "description": "this is my first project",
+            "image": "/assets/images/IMG_2094C.jpg",
+            "link": "https://wikipedia.com",
+            "date": "10/2/2023",
+            "type": ["Game", "Simulation"]
+        },
+        {
+            "url": "project-2",
+            "name": "Another Project 2",
+            "description": "this is my second project",
+            "image": "/assets/images/IMG_2260-min-c.jpg",
+            "link": "https://youtube.com",
+            "date": "3/4/2024",
+            "type": ["Social Media", "Game", "Website"]
+        }
+    ]
+}

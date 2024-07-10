@@ -3,6 +3,11 @@ import "./palette.css";
 import "./globals.css";
 import Snake from "@/components/Snake/Snake";
 import Navbar from "@/components/Navbar/Navbar";
+import { Source_Sans_3 } from "next/font/google";
+
+const sourcesans3 = Source_Sans_3({
+    subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: "Jiaming Wang",
@@ -16,7 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>
+            <body className={`${sourcesans3.className}`}>
                 <div className="holderWrapper">
                     <div className="contentHolder"  
                           style={{boxShadow: "inset 0 0 37px 12px rgba(0,0,0,.7)", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))"}}>
