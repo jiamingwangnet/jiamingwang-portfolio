@@ -26,7 +26,12 @@ export default function About()
                         </div>
                         <div className="fly-in-l-r lg:w-2/3 md:w-1/2 h-2/6 md:h-auto">
                             <Heading>About</Heading>
-                            <p className="lg:text-xl text-m font-thin">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae fugit rem quaerat totam voluptas ipsam laboriosam natus, soluta iure neque nostrum praesentium eaque molestias optio, recusandae sint, harum modi cum!</p>
+                            <p className="lg:text-xl text-m font-thin m-1">
+                                Hello, my name is Jiaming Wang. I am currently a high school student in Australia aiming for a future career in software engineering. I am also a pianist with around 7 years of experience.
+                                 Other than software development, I am also interested in music composition as I have experience on the piano. I am a curious person and always prepared to take on new challenges.
+                            </p>
+                            <a className="m-4 text-lg text-highlight-2 underline underline-offset-4" 
+                            href="/assets/files/Resume-Jiaming Wang.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
                         </div>
                     </div>
                 </main>
