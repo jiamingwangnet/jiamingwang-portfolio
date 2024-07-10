@@ -1,5 +1,10 @@
 import { Manrope } from "next/font/google";
 import Link from "next/link";
+import { Metadata } from 'next';
+
+export const metadata:Metadata = {
+    title: "404"
+}
 
 const manrope = Manrope({
     subsets: ["latin"]
