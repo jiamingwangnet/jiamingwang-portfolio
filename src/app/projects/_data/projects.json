@@ -1,22 +1,40 @@
 {
     "projects": [
         {
-            "url": "project-1",
-            "name": "Project 1",
-            "description": "this is my first project",
-            "image": "/assets/images/IMG_2094C.jpg",
-            "link": "https://wikipedia.com",
-            "date": "10/2/2023",
-            "type": ["Game", "Simulation"]
+            "url": "snakeai",
+            "name": "Snake AI",
+            "description": "A machine learning AI that uses Deep Q-learning to play the game snake. Developed from scratch using pure C++ and C++ standard libraries.",
+            "image": "/assets/images/Snake.png",
+            "link": "https://github.com/jiamingwangnet/SnakeAI",
+            "date": "19/6/2023",
+            "type": ["Machine Learning", "AI", "Simulation", "Game"]
         },
         {
-            "url": "project-2",
-            "name": "Another Project 2",
-            "description": "this is my second project",
-            "image": "/assets/images/IMG_2260-min-c.jpg",
-            "link": "https://youtube.com",
-            "date": "3/4/2024",
-            "type": ["Social Media", "Game", "Website"]
+            "url": "number-classifier",
+            "name": "Number Classifier",
+            "description": "A simple feed-forward neural network that was trained on the MNIST handwritting numbers dataset to identify numbers. Developed from scratching using only C++ and C++ standard libraries.",
+            "image": "/assets/images/numberclassifier.png",
+            "link": "https://github.com/jiamingwangnet/number-classifier",
+            "date": "18/12/2022",
+            "type": ["Machine Learning", "AI", "Image Recognition"]
+        },
+        {
+            "url":"snekos",
+            "name": "SnekOS",
+            "description": "A simple 64bit operating system that runs snake and executes user commands.",
+            "image": "/assets/images/snekos.png",
+            "link": "https://github.com/jiamingwangnet/snekos",
+            "date": "2/11/2022",
+            "type": ["Operating System", "Game"]
+        },
+        {
+            "url":"wonton-engine",
+            "name": "Wonton Engine",
+            "description": "A custom game engine built using the OpenGL API and C++. Currently in progress.",
+            "image": "/assets/images/wontonengine.png",
+            "link": "https://github.com/jiamingwangnet/WontonEngine",
+            "date": "12/9/2023",
+            "type": ["Game Engine", "Graphics", "Game", "In Progress"]
         }
     ]
 }

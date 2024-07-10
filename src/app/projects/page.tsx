@@ -23,9 +23,21 @@ export default function Projects()
 
     const currentImage = useRef<number>(-1); 
 
+    // sort projects
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
+    ProjectData.projects.sort((a:Project, b:Project) => {
+        const dstringA = a.date.split('/');
+        const dstringB = b.date.split('/');
+        
+        return - new Date(`${dstringA[0]} ${months[parseInt(dstringA[1])-1]} ${dstringA[2]}`).getTime()
+             + new Date(`${dstringB[0]} ${months[parseInt(dstringB[1])-1]} ${dstringB[2]}`).getTime();
+    });
+
     useEffect(() => {
         setProjImageStates(new Array<boolean>(ProjectData.projects.length).fill(false));
      }, []);
+     
 
     const onHover = useCallback((projUrl: string) => {
         setHasHovered(true);
@@ -55,7 +67,9 @@ export default function Projects()
                                             <li className='md:text-4xl text-3xl m-5 projlist transition-all hover:tracking-widest' onMouseOver={() => {onHover(proj.url)}}
                                             style={{animation: FlyInRL(`${idx * 100}ms`),transform:"translateX(100vw)"}}
                                             key={proj.url}>
-                                                <Link href={`/projects/${proj.url}`}>{proj.name}</Link>
+                                                <Link href={`/projects/${proj.url}`}>{proj.name}
+                                                    <div className='text-lg relative'>{proj.type[0]}</div>
+                                                </Link>
                                             </li>
                                         )
                                     })
