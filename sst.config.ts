@@ -1,7 +1,7 @@
 import { SSTConfig } from "sst";
 import { NextjsSite } from "sst/constructs";
 
-export default {
+const sstConfig =  {
   config(_input) {
     return {
       name: "jiamingwang-portfolio",
@@ -18,3 +18,5 @@ export default {
     });
   },
 } satisfies SSTConfig;
+
+module.exports = sstConfig;
