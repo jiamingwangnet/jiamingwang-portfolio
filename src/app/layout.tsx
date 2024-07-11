@@ -4,6 +4,7 @@ import "./globals.css";
 import Snake from "@/components/Snake/Snake";
 import Navbar from "@/components/Navbar/Navbar";
 import { Source_Sans_3 } from "next/font/google";
+import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
 
 const sourcesans3 = Source_Sans_3({
     subsets: ['latin']
@@ -24,6 +25,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+            <GoogleAnalytics/>
             <body className={`${sourcesans3.className}`}>
                 <div className="holderWrapper">
                     <div className="contentHolder"  
