@@ -23,9 +23,9 @@ export async function generateStaticParams()
 
 export default function Download({params}:Props)
 {
-    if(ProjectData.projects.find((proj:Project) => {
-        return proj.url === params.project;
-    }) === undefined) notFound();
+    // if(ProjectData.projects.find((proj:Project) => {
+    //     return proj.url === params.project;
+    // }) === undefined) notFound();
 
     return (
         <>
