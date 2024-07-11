@@ -14,7 +14,7 @@ export async function generateStaticParams()
 {
     return ProjectData.projects.map((p:Project) => {
         return {
-            project: p.url
+            project: p.url,
         }
     })
 }
