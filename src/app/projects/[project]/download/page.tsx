@@ -11,16 +11,6 @@ type Props = {
     }
 }
 
-// static website
-export async function generateStaticParams()
-{
-    return ProjectData.projects.map((p:Project) => {
-        return {
-            project: p.url
-        }
-    })
-}
-
 export default function Download({params}:Props)
 {
     if(ProjectData.projects.find((proj:Project) => {

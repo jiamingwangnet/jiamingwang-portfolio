@@ -5,7 +5,7 @@ export default {
   config(_input) {
     return {
       name: "jiamingwang-portfolio",
-      region: "us-east-1",
+      region: "ap-southeast-2",
     };
   },
   stacks(app) {
