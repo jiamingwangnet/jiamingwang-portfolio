@@ -53,6 +53,15 @@
             "link": "/projects/lights-out/download",
             "date": "23/2/2022",
             "type": ["Game", "Game Jam"]
+        },
+        {
+            "url":"chat-app",
+            "name": "Chat App",
+            "description": "A single chat room built using AWS Lambda and hosted using AWS S3. (Warning: the chat is currently unmoderated).",
+            "image": "/assets/images/chatapp.png",
+            "link": "https://chat.jiamingwang.net",
+            "date": "27/1/2023",
+            "type": ["Social", "Web App"]
         }
     ]
 }
