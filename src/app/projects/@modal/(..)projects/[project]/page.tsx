@@ -6,14 +6,6 @@ import Heading from "@/components/Heading/Heading";
 import { Manrope } from "next/font/google";
 import OutboundLink from "@/components/OutboundLink/OutboundLink";
 
-// static website
-export async function generateStaticParams()
-{
-    return ProjectData.projects.map((p:Project) => ({
-        project: p.url
-    }));
-}
-
 const manrope = Manrope({
     subsets:['latin'],
 });

@@ -4,18 +4,10 @@ export const metadata:Metadata = {
     title: "Projects"
 }
 
-export default function ProjectsLayout({children}:{children:React.ReactNode})
+export default function ProjectsLayout({children, modal}:{children:React.ReactNode,modal:React.ReactNode})
 {
     return <>
+        {modal}
         {children}
     </>
 }
-
-// SLOTS ROUTES DOES NOT WORK WITH STATIC SERVER
-// export default function ProjectsLayout({children, modal}:{children:React.ReactNode,modal:React.ReactNode})
-// {
-//     return <>
-//         {modal}
-//         {children}
-//     </>
-// }

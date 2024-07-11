@@ -9,16 +9,6 @@ const manrope = Manrope({
     subsets:['latin'],
 });
 
-// static website
-export async function generateStaticParams()
-{
-    return ProjectData.projects.map((p:Project) => {
-        return {
-            project: p.url,
-        }
-    })
-}
-
 type Props = {
     params: {
         project: string;
