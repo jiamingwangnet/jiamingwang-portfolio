@@ -468,7 +468,17 @@ export class Board
 
             if(sbody[0].x === this.applePos.x && sbody[0].y === this.applePos.y)
             {
-                this.applePos = {x: Math.floor(Math.random() * this.width), y: Math.floor(Math.random() * this.height)};
+                do 
+                {
+                    this.applePos = {x: Math.floor(Math.random() * this.width), y: Math.floor(Math.random() * this.height)};
+                } 
+                while((() => {
+                    for(const body of this.snake.segments)
+                    {
+                        if(this.applePos.x === body.x && this.applePos.y === body.y) return true;
+                    }
+                    return false;
+                })());
                 sbody.push({x: 0, y: 0});
             }
 
