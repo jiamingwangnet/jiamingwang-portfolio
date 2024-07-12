@@ -2,7 +2,7 @@
     color: var(--highlight-2);
 }
 
-.linkt > span::after {
+.linkt > .arrow::after {
     content: '';
     display: block;
     width: 0;
