@@ -223,6 +223,36 @@ export default class Game
             this.lerpData.endY = (lerp(-0.15, 0.15, event.clientX/window.innerWidth));
 
             this.lerpData.timeElapsed = new THREE.Clock(true);
+
+            // effect
+
+            if(this.camera === undefined) return;
+
+            // convert to NDC
+            this.pointerPos.x = (event.clientX / window.innerWidth) * 2 - 1;
+            this.pointerPos.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            this.raycaster.setFromCamera(this.pointerPos, this.camera);
+            const intersects = this.raycaster.intersectObjects(this.scene!.children);
+
+            if(intersects.length > 0)
+            {
+                const pos = intersects[0].object.name.split(' ');
+
+                const r = 1;
+
+                for(let y = parseInt(pos[1]) - r; y < parseInt(pos[1]) + r + 1; y++)
+                {
+                    for(let x = parseInt(pos[0]) - r; x < parseInt(pos[0]) + r + 1; x++)
+                    {
+                        if(y < 0 || y >= this.height || x < 0 || x >= this.width) continue;
+
+                        this.cubes[y * this.width + x].rotation.z = 0;
+                        this.cubes[y * this.width + x].rotation.x = 0;
+                        this.cubes[y * this.width + x].rotation.y = 0;
+                    }
+                }
+            }
         });
 
         window.addEventListener('mousedown', event => {
@@ -285,7 +315,7 @@ export default class Game
         {
             for(let j = 0; j < this.width; j++)
             {
-                this.cubes[i * this.width + j].rotation.x += 0.01 * Math.random();
+                this.cubes[i * this.width + j].rotation.x += 0.02 * Math.random();
                 // this.cubes[i * this.width + j].rotation.z += 0.01;
                 switch(this.board.grid[i * this.width + j])
                 {
