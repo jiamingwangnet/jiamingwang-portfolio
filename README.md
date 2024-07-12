@@ -2,4 +2,6 @@
 
 New portfolio website.
 
-Currently static site but will change later.
+Hosted on Vercel.
+
+[jiamingwang.net](https://jiamingwang.net)
