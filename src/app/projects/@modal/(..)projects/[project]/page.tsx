@@ -34,11 +34,11 @@ export default function ProjModal({params}:Props)
                     <tbody>
                         <tr>
                             <th className={`text-xl pr-8 ${manrope.className} font-bold text-left`}>Date</th>
-                            <td className="text-lg"><Typer startDelay={400} typeDelay={10}>{proj.date}</Typer></td>
+                            <td className="text-lg break-all"><Typer startDelay={400} typeDelay={10}>{proj.date}</Typer></td>
                         </tr>
                         <tr>
                             <th className={`text-xl pr-8 ${manrope.className} font-bold text-left`}>Link</th>
-                            <td className="text-lg">
+                            <td className="text-lg break-all">
                                 <OutboundLink href={proj.link}>
                                     <Typer startDelay={400} typeDelay={10}>{proj.link}</Typer>
                                 </OutboundLink>
@@ -46,7 +46,7 @@ export default function ProjModal({params}:Props)
                         </tr>
                         <tr>
                             <th className={`text-xl pr-8 ${manrope.className} font-bold text-left`}>Type</th>
-                            <td className="text-lg">
+                            <td className="text-lg break-word">
                                 <Typer startDelay={400} typeDelay={10}>{proj.type.join(', ')}</Typer>
                             </td>
                         </tr>
