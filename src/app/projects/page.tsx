@@ -58,13 +58,13 @@ export default function Projects()
                 <div className='w-11/12 h-full mr-auto ml-auto'>
                     <Heading style={{animation: FlyInLR("0ms")}}>Projects</Heading>
                     <div className='flex md:justify-between md:flex-row-reverse justify-start flex-wrap md:flex-nowrap h-[calc(100%-4.75rem)]'>
-                        <div className='overflow-hidden md:h-full md:flex-shrink-0 md:flex-grow-0 md:basis-1/2 md:w-auto h-full w-full'>
+                        <div className='overflow-hidden md:h-full md:flex-shrink-0 md:flex-grow-0 md:basis-7/12 md:w-auto h-full w-full'>
                             <ul className='list-none  h-full w-full overflow-y-auto overflow-x-hidden 
-                                            pr-[20px] box-content'>
+                                            pr-[20px] box-content md:ml-8'>
                                 {
                                     ProjectData.projects.map((proj:Project, idx:number) => {
                                         return (
-                                            <li className='md:text-4xl text-3xl m-5 projlist transition-all hover:tracking-widest' onMouseOver={() => {onHover(proj.url)}}
+                                            <li className='md:text-4xl text-3xl m-5 projlist transition-all hover:tracking-widest whitespace-nowrap' onMouseOver={() => {onHover(proj.url)}}
                                             style={{animation: FlyInRL(`${idx * 50}ms`),transform:"translateX(100vw)"}}
                                             key={proj.url}>
                                                 <Link href={`/projects/${proj.url}`}>{proj.name}
@@ -76,7 +76,7 @@ export default function Projects()
                                 }
                             </ul>
                         </div>
-                        <div className='md:grid hidden w-1/2'>
+                        <div className='md:grid hidden w-5/12'>
                             {
                                 ProjectData.projects.map((proj:Project, idx:number) => {
                                     projImageMap.current[proj.url] = idx;
