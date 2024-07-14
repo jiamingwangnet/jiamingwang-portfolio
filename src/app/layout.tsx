@@ -5,6 +5,7 @@ import Snake from "@/components/Snake/Snake";
 import Navbar from "@/components/Navbar/Navbar";
 import { Source_Sans_3 } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
+import { RefObject, useRef } from "react";
 
 const sourcesans3 = Source_Sans_3({
     subsets: ['latin']
@@ -31,6 +32,7 @@ export default function RootLayout({
                     <div className="contentHolder"  
                           style={{boxShadow: "inset 0 0 37px 12px rgba(0,0,0,.7)", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))"}}>
                         <Navbar/>
+                        
                         {children}
                     </div>
                 </div>

@@ -10,7 +10,7 @@ export const metadata:Metadata = {
 export default function Contact()
 {
     return <>
-        <div className="w-11/12 mr-auto ml-auto mt-3">
+        <div className="w-11/12 mr-auto ml-auto mt-3 trContent">
             <Heading style={{animation: FlyInRL()}}>Contact</Heading>
             <ul>
                 <li style={{animation: FlyInRL("100ms")}}>Email: <OutboundLink href="mailto:jiamingwang.net@gmail.com">jiamingwang.net@gmail.com</OutboundLink></li>

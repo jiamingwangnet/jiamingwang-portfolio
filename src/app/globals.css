@@ -47,7 +47,7 @@ body {
 
 @keyframes a-fly-in-l-r {
     from {
-        transform: translateX(-100vh);
+        transform: translateX(-100vw);
     }
 
     to {
@@ -61,13 +61,13 @@ body {
     }
 
     to {
-        transform: translateX(-100vh);
+        transform: translateX(-100vw);
     }
 }
 
 @keyframes a-fly-in-r-l {
     from {
-        transform: translateX(100vh);
+        transform: translateX(100vw);
     }
 
     to {
@@ -81,7 +81,7 @@ body {
     }
 
     to {
-        transform: translateX(100vh);
+        transform: translateX(100vw);
     }
 }
 

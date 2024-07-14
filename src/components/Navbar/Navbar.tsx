@@ -1,6 +1,7 @@
 "use client"
 
 import "../../app/palette.css";
+import "@/app/globals.css";
 import "./style.css";
 import Image from "next/image"
 import BarSVG from "/public/assets/bar.svg"
@@ -9,12 +10,13 @@ import { RefObject, useCallback, useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Manrope } from "next/font/google";
+import TransitionLink from "../TransitionLink/TransitionLink";
 
 const manrope = Manrope({
     subsets: ['latin']
 })
 
-export default function Navbar()
+export default function Navbar({contentClass="trContent"}:{contentClass?:string})
 {
     const mlist:RefObject<HTMLUListElement> = useRef(null);
 
@@ -24,18 +26,19 @@ export default function Navbar()
         setShowMenu(!showMenu);
     }, [showMenu, setShowMenu])
 
-    const path = usePathname();
+    const [click, setClick] = useState(false);
     
     useEffect(() => {
         setShowMenu(false);
-    }, [path])
+    }, [click])
 
     return (
         <nav>
             <div className="flex justify-center h-12 lg:pt-5">
                 <div className="m-2 flex items-center justify-between w-[96%] z-30">
                     <div>
-                        <Link href="/">
+                        <TransitionLink href="/" useClass elements={[contentClass]} animations={[{name: "fly-out-l-r", duration: 380}]}
+                            onClick={e => {setClick(!click)}}>
                             <Image 
                                 priority
                                 src={Logo}
@@ -44,7 +47,7 @@ export default function Navbar()
                                 width={35}
                                 height={35}
                             />
-                        </Link>
+                        </TransitionLink>
                     </div>
 
                     <div>
@@ -71,19 +74,43 @@ export default function Navbar()
                         <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${manrope.className}`} 
                             style={{animation: 
                             showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards" : 
-                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 0ms forwards", transform: "translateY(-100vh)"}}><Link href="/">Home</Link></li>
+                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 0ms forwards", transform: "translateY(-100vh)"}}>
+
+                                <TransitionLink href="/" elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
+                                    onClick={e => {setClick(!click)}}
+                                >Home</TransitionLink>
+
+                        </li>
                         <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${manrope.className}`} 
                             style={{animation: 
                             showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 100ms forwards" : 
-                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 100ms forwards", transform: "translateY(-100vh)"}}><Link href="/about">About Me</Link></li>
+                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 100ms forwards", transform: "translateY(-100vh)"}}>
+
+                                <TransitionLink href="/about" elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
+                                    onClick={e => {setClick(!click)}}
+                                >About Me</TransitionLink>
+                                
+                        </li>
                         <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${manrope.className}`} 
                             style={{animation: 
                             showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 200ms forwards" : 
-                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 200ms forwards", transform: "translateY(-100vh)"}}><Link href="/projects">Projects</Link></li>
+                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 200ms forwards", transform: "translateY(-100vh)"}}>
+
+                                <TransitionLink href="/projects" elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
+                                    onClick={e => {setClick(!click)}}
+                                >Projects</TransitionLink>
+                                
+                        </li>
                         <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${manrope.className}`} 
                             style={{animation: 
                             showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 300ms forwards" : 
-                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 300ms forwards", transform: "translateY(-100vh)"}}><Link href="/contact">Contact</Link></li>
+                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 300ms forwards", transform: "translateY(-100vh)"}}>
+
+                                <TransitionLink href="/contact" elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
+                                    onClick={e => {setClick(!click)}}
+                                >Contact</TransitionLink>
+                                
+                        </li>
                     </ul>
                 </div>
             </div>

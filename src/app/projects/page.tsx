@@ -55,7 +55,7 @@ export default function Projects()
     return (
         <div className="holderWrapper overflow-x-hidden">
             <main className="contentHolder bg-bg-color/30 overflow-y-hidden overflow-x-hidden" style={{paddingTop:"4.75rem"}}>
-                <div className='w-11/12 h-full mr-auto ml-auto'>
+                <div className='w-11/12 h-full mr-auto ml-auto trContent'>
                     <Heading style={{animation: FlyInLR("0ms")}}>Projects</Heading>
                     <div className='flex md:justify-between md:flex-row-reverse justify-start flex-wrap md:flex-nowrap h-[calc(100%-4.75rem)]'>
                         <div className='overflow-hidden md:h-full md:flex-shrink-0 md:flex-grow-0 md:basis-7/12 md:w-auto h-full w-full'>
