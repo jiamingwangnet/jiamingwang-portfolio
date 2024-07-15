@@ -5,9 +5,10 @@ import { FlyInRL } from "../Animations";
 
 export const metadata:Metadata = {
     title: "Contact",
+    description: "Contact Jiaming. Email: jiamingwang.net@gmail.com.",
     openGraph: {
         title: "Jiaming Wang | Contact",
-        description: "Contact Jiaming.",
+        description: "Contact Jiaming. Email: jiamingwang.net@gmail.com.",
         url: "https://jiamingwang.net/contact",
         siteName: "Jiaming Wang",
         images: [

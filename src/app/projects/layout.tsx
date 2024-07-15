@@ -5,6 +5,7 @@ export const metadata:Metadata = {
         default: "Projects",
         template: "Jiaming Wang | %s"
     },
+    description: "Jiaming's projects.",
     openGraph: {
         title: "Jiaming Wang | Projects",
         description: "Jiaming's projects.",
