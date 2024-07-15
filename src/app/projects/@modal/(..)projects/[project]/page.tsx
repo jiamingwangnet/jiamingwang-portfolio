@@ -6,6 +6,7 @@ import Heading from "@/components/Heading/Heading";
 import { Manrope } from "next/font/google";
 import OutboundLink from "@/components/OutboundLink/OutboundLink";
 import Typer from "@/components/Typer/Typer";
+import { Metadata } from "next";
 
 const manrope = Manrope({
     subsets:['latin'],
@@ -15,6 +16,18 @@ type Props = {
     params: {
         project: string;
     }
+}
+
+export function generateMetadata({params}:Props): Metadata
+{
+    const proj:(Project | undefined) = ProjectData.projects.find((p:Project) => {return p.url === params.project;}); 
+
+    if(proj === undefined) return {title:"404"}
+
+    return {
+        title: proj.name,
+        description: proj.description,
+    };
 }
 
 export default function ProjModal({params}:Props)

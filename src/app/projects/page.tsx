@@ -4,7 +4,6 @@ import { Manrope } from 'next/font/google';
 import ProjectData from "./_data/projects.json";
 import Link from 'next/link';
 import "./style.css";
-import Image from 'next/image';
 import "../globals.css"
 import { useCallback, useState, useRef, RefObject, useEffect } from 'react';
 import Project from './_data/interface';

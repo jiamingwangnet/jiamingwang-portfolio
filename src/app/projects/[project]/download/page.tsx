@@ -4,12 +4,26 @@ import IDownload from "./_download-data/interface";
 import ProjectData from "@/app/projects/_data/projects.json";
 import Project from "@/app/projects/_data/interface";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 type Props = {
     params: {
         project: string;
     }
 }
+
+export function generateMetadata({params}:Props): Metadata
+{
+    const proj:(Project | undefined) = ProjectData.projects.find((p:Project) => {return p.url === params.project;}); 
+
+    if(proj === undefined) return {title:"404"}
+
+    return {
+        title: `${proj.name} download`,
+        description: proj.description,
+    };
+}
+
 
 export default function Download({params}:Props)
 {

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./palette.css";
 import "./globals.css";
 import Snake from "@/components/Snake/Snake";
@@ -16,8 +16,32 @@ export const metadata: Metadata = {
     default: "Jiaming Wang",
     template: "Jiaming Wang | %s"
   },
-  description: "Jiaming's Website",
+  authors: [{name:"Jiaming Wang", url:"https://jiamingwang.net"}],
+  creator: "Jiaming Wang",
+  keywords: ["Jiaming", "Wang", "Jiaming Wang", "Developer", "C++", "C++ developer", "Nextjs developer", "cpp", "SnekOS", "SnakeAI", "WontonEngine", "Lights Out", "jiamingwangnet", "jiamingwang"],
+  description: "Hello, I'm Jiaming. I am currently a high school student in Australia aiming for a future career in software engineering.",
+  openGraph: {
+    title: "Jiaming Wang",
+    description: "Hello, I'm Jiaming. I am currently a high school student in Australia aiming for a future career in software engineering.",
+    url: "https://jiamingwang.net",
+    siteName: "Jiaming Wang",
+    images: [
+        {
+            url:"https://jiamingwang.net/assets/logo.png",
+            width: 2000,
+            height: 2000,
+            alt: "Logo",
+        }
+    ],
+    locale: "en_AU",
+    type: "website",
+  },
 };
+
+export const viewport: Viewport = {
+    themeColor: "#3276AE",
+    colorScheme: "dark"
+}
 
 export default function RootLayout({
     children,

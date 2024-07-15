@@ -5,6 +5,7 @@ import Heading from "@/components/Heading/Heading";
 import { Manrope } from "next/font/google";
 import OutboundLink from "@/components/OutboundLink/OutboundLink";
 import Typer from "@/components/Typer/Typer";
+import { Metadata } from "next";
 
 const manrope = Manrope({
     subsets:['latin'],
@@ -15,6 +16,33 @@ type Props = {
         project: string;
     }
 }
+
+export function generateMetadata({params}:Props): Metadata
+{
+    const proj:(Project | undefined) = ProjectData.projects.find((p:Project) => {return p.url === params.project;}); 
+
+    if(proj === undefined) return {title:"404"}
+
+    return {
+        title: proj.name,
+        description: proj.description,
+        openGraph: {
+            title: `Jiaming Wang | ${proj.name}`,
+            description: proj.description,
+            url: `https://jiamingwang.net${proj.url}`,
+            siteName: `Jiaming Wang | ${proj.name}`,
+            images: [
+                {
+                    url: `https://jiamingwang.net${proj.image}`,
+                    alt: `Image of ${proj.name}`,
+                }
+            ],
+            locale: "en_AU",
+            type: "website",
+          }
+    };
+}
+
 
 export default function ProjectPage({params}:Props)
 {
