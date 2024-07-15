@@ -6,7 +6,23 @@ import Heading from "@/components/Heading/Heading";
 import { Metadata } from 'next';
 
 export const metadata:Metadata = {
-    title: "About"
+    title: "About",
+    openGraph: {
+        title: "Jiaming Wang | About",
+        description: "About Jiaming.",
+        url: "https://jiamingwang.net/about",
+        siteName: "Jiaming Wang",
+        images: [
+            {
+                url:"https://jiamingwang.net/assets/logo.png",
+                width: 2000,
+                height: 2000,
+                alt: "Logo",
+            }
+        ],
+        locale: "en_AU",
+        type: "website",
+      },
 }
 
 const manrope = Manrope({

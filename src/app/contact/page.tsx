@@ -4,7 +4,23 @@ import { Metadata } from 'next';
 import { FlyInRL } from "../Animations";
 
 export const metadata:Metadata = {
-    title: "Contact"
+    title: "Contact",
+    openGraph: {
+        title: "Jiaming Wang | Contact",
+        description: "Contact Jiaming.",
+        url: "https://jiamingwang.net/contact",
+        siteName: "Jiaming Wang",
+        images: [
+            {
+                url:"https://jiamingwang.net/assets/logo.png",
+                width: 2000,
+                height: 2000,
+                alt: "Logo",
+            }
+        ],
+        locale: "en_AU",
+        type: "website",
+      },
 }
 
 export default function Contact()

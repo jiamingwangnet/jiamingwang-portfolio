@@ -30,7 +30,7 @@ export function generateMetadata({params}:Props): Metadata
             title: `Jiaming Wang | ${proj.name}`,
             description: proj.description,
             url: `https://jiamingwang.net${proj.url}`,
-            siteName: `Jiaming Wang | ${proj.name}`,
+            siteName: `Jiaming Wang`,
             images: [
                 {
                     url: `https://jiamingwang.net${proj.image}`,
