@@ -1,6 +1,6 @@
 "use client"
 
-import { Manrope } from 'next/font/google';
+import { TitleFont } from "@/app/fonts";
 import ProjectData from "./_data/projects.json";
 import Link from 'next/link';
 import "./style.css";
@@ -10,9 +10,7 @@ import Project from './_data/interface';
 import Heading from '@/components/Heading/Heading';
 import { FlyInRL, FlyInLR } from '../Animations';   
 
-const manrope = Manrope({
-    subsets:['latin'],
-});
+
 
 export default function Projects()
 {

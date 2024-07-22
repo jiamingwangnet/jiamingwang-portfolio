@@ -3,13 +3,8 @@ import "./palette.css";
 import "./globals.css";
 import Snake from "@/components/Snake/Snake";
 import Navbar from "@/components/Navbar/Navbar";
-import { Source_Sans_3 } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
-import { RefObject, useRef } from "react";
-
-const sourcesans3 = Source_Sans_3({
-    subsets: ['latin']
-})
+import {TextFont} from "@/app/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -51,7 +46,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <GoogleAnalytics/>
-            <body className={`${sourcesans3.className}`}>
+            <body className={`${TextFont.className}`}>
                 <div className="holderWrapper">
                     <div className="contentHolder"  
                           style={{boxShadow: "inset 0 0 37px 12px rgba(0,0,0,.7)", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))"}}>

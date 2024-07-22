@@ -86,7 +86,8 @@ export default function Navbar({contentClass="trContent"}:{contentClass?:string}
                     <ul className="list-none items-center h-fit" ref={mlist}>
                         {
                             items.map((value, idx) => {
-                                return <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${MenuFont.className}`} 
+                                return <li key={value.name}
+                                            className={`lg:text-4xl md:text-4xl sm:text-3xl text-2xl sm:mb-6 mb-3 transition-all hover:tracking-[0.25em] ${MenuFont.className}`} 
                                             style={{animation: 
                                             showMenu ? `drop 250ms cubic-bezier(.26,.84,.4,1.01) ${idx * 100}ms forwards` : 
                                             `fly 250ms cubic-bezier(.57,-0.03,.94,.22) ${idx * 100}ms forwards`, transform: "translateY(-100vh)"}}>

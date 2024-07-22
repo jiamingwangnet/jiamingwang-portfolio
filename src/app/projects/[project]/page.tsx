@@ -2,14 +2,12 @@ import { notFound } from "next/navigation";
 import Project from "../_data/interface";
 import ProjectData from "../_data/projects.json";
 import Heading from "@/components/Heading/Heading";
-import { Manrope } from "next/font/google";
+import { TitleFont } from "@/app/fonts";
 import OutboundLink from "@/components/OutboundLink/OutboundLink";
 import Typer from "@/components/Typer/Typer";
 import { Metadata } from "next";
 
-const manrope = Manrope({
-    subsets:['latin'],
-});
+
 
 type Props = {
     params: {
@@ -61,11 +59,11 @@ export default function ProjectPage({params}:Props)
                     <table className="m-3">
                         <tbody>
                             <tr>
-                                <th className={`text-xl pr-8 ${manrope.className} font-bold text-left`}>Date</th>
+                                <th className={`text-xl pr-8 ${TitleFont.className} font-bold text-left`}>Date</th>
                                 <td className="text-lg break-all"><Typer startDelay={400} typeDelay={10}>{proj.date}</Typer></td>
                             </tr>
                             <tr>
-                                <th className={`text-xl pr-8 ${manrope.className} font-bold text-left`}>Link</th>
+                                <th className={`text-xl pr-8 ${TitleFont.className} font-bold text-left`}>Link</th>
                                 <td className="text-lg break-all">
                                     <OutboundLink href={proj.link}>
                                         <Typer startDelay={400} typeDelay={10}>{proj.link}</Typer>
@@ -73,7 +71,7 @@ export default function ProjectPage({params}:Props)
                                 </td>
                             </tr>
                             <tr>
-                                <th className={`text-xl pr-8 ${manrope.className} font-bold text-left`}>Type</th>
+                                <th className={`text-xl pr-8 ${TitleFont.className} font-bold text-left`}>Type</th>
                                 <td className="text-lg break-words">
                                     <Typer startDelay={400} typeDelay={10}>{proj.type.join(', ')}</Typer>
                                 </td>
