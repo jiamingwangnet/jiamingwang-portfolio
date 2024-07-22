@@ -1,5 +1,6 @@
 import { TitleFont } from "@/app/fonts";
 import "../../app/globals.css";
+import GlitchTyper from "../GlitchTyper/GlitchTyper";
 
 export default function LoadScrn({loading}:{loading:boolean}) {
     return (

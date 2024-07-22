@@ -3,6 +3,7 @@ import Image from "next/image";
 import photo from "@/resources/IMG_2429.jpg";
 import Heading from "@/components/Heading/Heading";
 import { Metadata } from 'next';
+import GlitchTyper from "@/components/GlitchTyper/GlitchTyper";
 
 export const metadata:Metadata = {
     title: "About",
@@ -37,7 +38,7 @@ export default function About()
                             className="md:w-full md:max-h-[550px] h-full rounded-lg object-cover" priority/>
                         </div>
                         <div className="fly-in-l-r lg:w-2/3 md:w-1/2 h-2/6 md:h-auto">
-                            <Heading>About</Heading>
+                            <Heading><GlitchTyper startDelay={150} typeDelay={50} switchDelay={10}>About</GlitchTyper></Heading>
                             <p className="lg:text-xl text-m font-thin m-1">
                                 Hello, my name is Jiaming Wang. I am currently a high school student in Australia aiming for a future career in software engineering. I am also a pianist with around 7 years of experience.
                                  Other than software development, I am also interested in music composition as I have experience on the piano. I am a curious person and always prepared to take on new challenges.

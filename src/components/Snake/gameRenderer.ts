@@ -1,7 +1,7 @@
 import { RefObject } from 'react';
 import * as THREE from 'three';
 import { Board, Agent, layerInfo, Data, DIR } from './gameLogic';
-import { EffectComposer, OutputPass, RenderPass, FilmPass } from 'three/examples/jsm/Addons.js';
+import { EffectComposer, OutputPass, RenderPass, FilmPass, UnrealBloomPass } from 'three/examples/jsm/Addons.js';
 
 const APPLE_COLOR = 0xfafafa;
 const SNAKE_COLOR = 0x3276AE;
@@ -151,6 +151,7 @@ export default class Game
             const renderPass = new RenderPass( this.scene, this.camera );
             this.composer.addPass( renderPass );
 
+            this.composer.addPass(new UnrealBloomPass(new THREE.Vector2(this.width, this.height),0.4, 0, 0.1))
             this.composer.addPass(new FilmPass(1));
             this.composer.addPass(new FilmPass(0.5));
 
