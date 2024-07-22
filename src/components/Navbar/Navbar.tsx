@@ -7,14 +7,8 @@ import Image from "next/image"
 import BarSVG from "/public/assets/bar.svg"
 import Logo from "/public/assets/logo.svg";
 import { RefObject, useCallback, useRef, useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Manrope } from "next/font/google";
+import { MenuFont } from "@/app/fonts";
 import TransitionLink from "../TransitionLink/TransitionLink";
-
-const manrope = Manrope({
-    subsets: ['latin']
-})
 
 export default function Navbar({contentClass="trContent"}:{contentClass?:string})
 {
@@ -27,6 +21,25 @@ export default function Navbar({contentClass="trContent"}:{contentClass?:string}
     }, [showMenu, setShowMenu])
 
     const [click, setClick] = useState(false);
+
+    const items:{name:string,url:string}[] = [
+        {
+            name: "Home", 
+            url: "/"
+        },
+        {
+            name: "About Me", 
+            url: "/about"
+        },
+        {
+            name: "Projects", 
+            url: "/projects"
+        },
+        {
+            name: "Contact", 
+            url: "/contact"
+        },
+    ];
     
     useEffect(() => {
         setShowMenu(false);
@@ -71,46 +84,20 @@ export default function Navbar({contentClass="trContent"}:{contentClass?:string}
                                     "close 480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards",display: 'flex',visibility:'hidden'}}>
                 <div className="flex items-center w-full h-full pl-[10%] bg-[#00000098]">
                     <ul className="list-none items-center h-fit" ref={mlist}>
-                        <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${manrope.className}`} 
-                            style={{animation: 
-                            showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards" : 
-                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 0ms forwards", transform: "translateY(-100vh)"}}>
-
-                                <TransitionLink href="/" elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
-                                    onClick={e => {setClick(!click)}}
-                                >Home</TransitionLink>
-
-                        </li>
-                        <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${manrope.className}`} 
-                            style={{animation: 
-                            showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 100ms forwards" : 
-                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 100ms forwards", transform: "translateY(-100vh)"}}>
-
-                                <TransitionLink href="/about" elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
-                                    onClick={e => {setClick(!click)}}
-                                >About Me</TransitionLink>
-                                
-                        </li>
-                        <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${manrope.className}`} 
-                            style={{animation: 
-                            showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 200ms forwards" : 
-                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 200ms forwards", transform: "translateY(-100vh)"}}>
-
-                                <TransitionLink href="/projects" elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
-                                    onClick={e => {setClick(!click)}}
-                                >Projects</TransitionLink>
-                                
-                        </li>
-                        <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${manrope.className}`} 
-                            style={{animation: 
-                            showMenu ? "drop 250ms cubic-bezier(.26,.84,.4,1.01) 300ms forwards" : 
-                            "fly 250ms cubic-bezier(.57,-0.03,.94,.22) 300ms forwards", transform: "translateY(-100vh)"}}>
-
-                                <TransitionLink href="/contact" elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
-                                    onClick={e => {setClick(!click)}}
-                                >Contact</TransitionLink>
-                                
-                        </li>
+                        {
+                            items.map((value, idx) => {
+                                return <li className={`text-5xl mb-6 transition-all hover:tracking-[0.25em] ${MenuFont.className}`} 
+                                            style={{animation: 
+                                            showMenu ? `drop 250ms cubic-bezier(.26,.84,.4,1.01) ${idx * 100}ms forwards` : 
+                                            `fly 250ms cubic-bezier(.57,-0.03,.94,.22) ${idx * 100}ms forwards`, transform: "translateY(-100vh)"}}>
+                                            
+                                                <TransitionLink href={value.url} elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
+                                                    onClick={e => {setClick(!click)}}
+                                                >{value.name}</TransitionLink>
+    
+                                        </li>
+                            })
+                        }
                     </ul>
                 </div>
             </div>
