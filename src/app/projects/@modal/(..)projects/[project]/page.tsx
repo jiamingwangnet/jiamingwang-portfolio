@@ -7,6 +7,7 @@ import { TitleFont } from "@/app/fonts";
 import OutboundLink from "@/components/OutboundLink/OutboundLink";
 import Typer from "@/components/Typer/Typer";
 import { Metadata } from "next";
+import RandomGlitchTyper from "@/components/RandomGlitchTyper/RandomGlitchTyper";
 
 
 
@@ -63,7 +64,11 @@ export default function ProjModal({params}:Props)
                         </tr>
                     </tbody>
                 </table>
-                <p>{proj.description}</p>
+                <p>
+                    <RandomGlitchTyper startDelay={90} typeDelay={20} switchDelay={10} amount={7}>
+                    {proj.description}
+                    </RandomGlitchTyper>
+                </p>
             </>
         </Modal>
     </>;

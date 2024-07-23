@@ -4,6 +4,7 @@ import photo from "@/resources/IMG_2429.jpg";
 import Heading from "@/components/Heading/Heading";
 import { Metadata } from 'next';
 import GlitchTyper from "@/components/GlitchTyper/GlitchTyper";
+import RandomGlitchTyper from "@/components/RandomGlitchTyper/RandomGlitchTyper";
 
 export const metadata:Metadata = {
     title: "About",
@@ -39,9 +40,11 @@ export default function About()
                         </div>
                         <div className="fly-in-l-r lg:w-2/3 md:w-1/2 h-2/6 md:h-auto">
                             <Heading><GlitchTyper startDelay={150} typeDelay={50} switchDelay={10}>About</GlitchTyper></Heading>
-                            <p className="lg:text-xl text-m font-thin m-1">
+                            <p className="lg:text-xl text-m font-thin m-1 overflow-hidden">
+                                <RandomGlitchTyper startDelay={10} typeDelay={10} switchDelay={10} amount={5}>
                                 Hello, my name is Jiaming Wang. I am currently a high school student in Australia aiming for a future career in software engineering. I am also a pianist with around 7 years of experience.
-                                 Other than software development, I am also interested in music composition as I have experience on the piano. I am a curious person and always prepared to take on new challenges.
+                                Other than software development, I am also interested in music composition as I have experience on the piano. I am a curious person and always prepared to take on new challenges.
+                                </RandomGlitchTyper>
                             </p>
                             <a className="m-4 text-lg text-highlight-2 underline underline-offset-4" 
                             href="/assets/files/Resume-Jiaming Wang.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
