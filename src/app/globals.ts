@@ -1,5 +1,5 @@
 export const ORIGINAL_RATE = 50;
-export let SNAKE_RATE = [ORIGINAL_RATE];
+export let SNAKE_RATE = [ORIGINAL_RATE]; // create reference
 export const NEW_RATE = 250;
 
 export function SetRate(rate:number)
