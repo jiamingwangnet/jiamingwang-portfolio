@@ -46,7 +46,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <GoogleAnalytics/>
-            <body className={`${TextFont.className}`}>
+            <body className={`${TextFont.className} font-light`}>
                 <div className="holderWrapper">
                     <div className="contentHolder"  
                           style={{boxShadow: "inset 0 0 37px 12px rgba(0,0,0,.7)", backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3))"}}>

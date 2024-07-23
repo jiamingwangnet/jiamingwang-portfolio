@@ -88,7 +88,7 @@ export default function Navbar({contentClass="trContent"}:{contentClass?:string}
             <div className="fixed w-full h-full flex justify-center items-center left-0 top-0 z-20 menu" 
                 style={{animation: showMenu ? "open 380ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards" : 
                                     "close 480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards",display: 'flex',visibility:'hidden'}}>
-                <div className="flex items-center w-full h-full pl-[10%] bg-[#00000098]">
+                <div className="flex items-center w-full h-full pl-[10%] bg-[#000000d2]">
                     <ul className="list-none items-center h-fit" ref={mlist}>
                         {
                             items.map((value, idx) => {
