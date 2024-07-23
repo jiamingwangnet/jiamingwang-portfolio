@@ -43,7 +43,7 @@ export default function About()
                             <p className="lg:text-lg text-sm font-thin m-1 overflow-hidden">
                                 <RandomGlitchTyper startDelay={5} typeDelay={5} switchDelay={5} amount={8}>
                                 Hello, my name is Jiaming Wang. I am currently a high school student in Australia aiming for a future career in software engineering. I am also a pianist with around 7 years of experience.
-                                Other than software development, I am also interested in music composition as I have experience on the piano. I am a curious person and always prepared to take on new challenges.
+                                Besides software development, I am likewise interested in music composition as I have experience on the piano. I am a curious person and always prepared to take on new challenges.
                                 </RandomGlitchTyper>
                             </p>
                             <a className="m-4 text-base text-highlight-2 underline underline-offset-4" 
