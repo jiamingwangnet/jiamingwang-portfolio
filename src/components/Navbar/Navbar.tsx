@@ -9,6 +9,7 @@ import Logo from "/public/assets/logo.svg";
 import { RefObject, useCallback, useRef, useState, useEffect } from "react";
 import { MenuFont } from "@/app/fonts";
 import TransitionLink from "../TransitionLink/TransitionLink";
+import {ORIGINAL_RATE, SetRate, NEW_RATE} from "@/app/globals";
 
 export default function Navbar({contentClass="trContent"}:{contentClass?:string})
 {
@@ -17,8 +18,13 @@ export default function Navbar({contentClass="trContent"}:{contentClass?:string}
     const [showMenu, setShowMenu] = useState(false);
 
     const toggle = useCallback(() => {
-        setShowMenu(!showMenu);
+        setShowMenu(!showMenu);      
     }, [showMenu, setShowMenu])
+
+    useEffect(() => {
+        if(showMenu) SetRate(NEW_RATE);
+        else SetRate(ORIGINAL_RATE); 
+    }, [showMenu])
 
     const [click, setClick] = useState(false);
 

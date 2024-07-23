@@ -1,7 +1,8 @@
 import { RefObject } from 'react';
 import * as THREE from 'three';
 import { Board, Agent, layerInfo, Data, DIR } from './gameLogic';
-import { EffectComposer, OutputPass, RenderPass, FilmPass, UnrealBloomPass } from 'three/examples/jsm/Addons.js';
+import { EffectComposer, OutputPass, RenderPass, FilmPass, UnrealBloomPass, AfterimagePass } from 'three/examples/jsm/Addons.js';
+import {NEW_RATE, ORIGINAL_RATE, SNAKE_RATE} from "@/app/globals";
 
 const APPLE_COLOR = 0xfafafa;
 const SNAKE_COLOR = 0x3276AE;
@@ -31,9 +32,10 @@ export default class Game
 
     actions: (()=>void)[];
     clock: THREE.Clock;
-    rate: number;
+    rate: number[];
     nextUpdate: number;
     composer: EffectComposer | undefined;
+    afterImage: AfterimagePass | undefined;
 
     hasStartedInit: boolean;
 
@@ -127,11 +129,13 @@ export default class Game
         ];
         this.agent = undefined;
         this.clock = new THREE.Clock(false);
-        this.rate = 50;
+        this.rate = SNAKE_RATE;
         this.nextUpdate = 0;
 
         this.pointerPos = new THREE.Vector2();
         this.raycaster = new THREE.Raycaster();
+
+        this.afterImage;
     }
 
     async InitSystems(containerRef: RefObject<HTMLDivElement>)
@@ -151,9 +155,10 @@ export default class Game
             const renderPass = new RenderPass( this.scene, this.camera );
             this.composer.addPass( renderPass );
 
-            this.composer.addPass(new UnrealBloomPass(new THREE.Vector2(this.width, this.height),0.4, 0, 0.1))
+            this.composer.addPass(new UnrealBloomPass(new THREE.Vector2(this.width, this.height),0.4, 0, 0.1));
+            this.afterImage = new AfterimagePass(0.75);
+            this.composer.addPass(this.afterImage);
             this.composer.addPass(new FilmPass(1));
-            this.composer.addPass(new FilmPass(0.5));
 
             const outputPass = new OutputPass();
             this.composer.addPass( outputPass );
@@ -279,6 +284,9 @@ export default class Game
 
     Update()
     {
+        if(this.rate[0] === NEW_RATE) this.afterImage!.uniforms["damp"].value = 0.975;
+        else this.afterImage!.uniforms["damp"].value = 0.75;
+
         const time = this.clock.getElapsedTime() * 1000;
         // console.log(this.lerpData.timeElapsed.getElapsedTime())
         if(this.lerpData.timeElapsed.getElapsedTime() < this.lerpData.duration)
@@ -304,7 +312,7 @@ export default class Game
                 this.board.Reset();
             }
 
-            this.nextUpdate = time + this.rate;
+            this.nextUpdate = time + this.rate[0];
         }
     }
 
@@ -316,7 +324,7 @@ export default class Game
         {
             for(let j = 0; j < this.width; j++)
             {
-                this.cubes[i * this.width + j].rotation.x += 0.02 * Math.random();
+                this.cubes[i * this.width + j].rotation.x += 0.02 * Math.random() * (ORIGINAL_RATE / NEW_RATE);
                 // this.cubes[i * this.width + j].rotation.z += 0.01;
                 switch(this.board.grid[i * this.width + j])
                 {
