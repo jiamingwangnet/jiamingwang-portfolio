@@ -66,10 +66,10 @@ export default function Projects()
                                     {
                                         ProjectData.projects.map((proj:Project, idx:number) => {
                                             return (
-                                                <li className='lg:text-6xl md:text-5xl sm:text-4xl text-3xl m-5 projlist transition-all hover:tracking-widest whitespace-nowrap text-right' onMouseOver={() => {onHover(proj.url)}}
+                                                <li className='lg:text-5xl md:text-4xl sm:text-3xl text-2xl m-5 projlist transition-all hover:tracking-widest whitespace-nowrap text-right' onMouseOver={() => {onHover(proj.url)}}
                                                 style={{animation: FlyInRL(`${idx * 50}ms`),transform:"translateX(100vw)"}}
                                                 key={proj.url}>
-                                                    <Link href={`/projects/${proj.url}`} className={`${TextFont.className}`}>{proj.name}
+                                                    <Link href={`/projects/${proj.url}`} className={`${TitleFont.className}`}>{proj.name}
                                                         <div className={`text-lg relative ${TextFont.className}`}>{proj.type[0]}</div>
                                                     </Link>
                                                 </li>
