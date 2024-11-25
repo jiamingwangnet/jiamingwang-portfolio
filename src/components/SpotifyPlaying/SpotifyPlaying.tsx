@@ -56,7 +56,7 @@ export default function SpotifyPlaying()
         <div className="m-5">
             <h2 className={`text-lg ${TitleFont.className}`}>My Playlists</h2>
             {
-                playlists.map(item => <a href={item.uri} className="m-3 text-xs font-thin">{item.name}</a>)
+                playlists.map(item => <a href={item.uri} className="m-3 text-xs font-thin" key={item.name}>{item.name}</a>)
             }
         </div>
     );
