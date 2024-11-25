@@ -5,6 +5,7 @@ import Heading from "@/components/Heading/Heading";
 import { Metadata } from 'next';
 import GlitchTyper from "@/components/GlitchTyper/GlitchTyper";
 import RandomGlitchTyper from "@/components/RandomGlitchTyper/RandomGlitchTyper";
+import SpotifyPlaying from "@/components/SpotifyPlaying/SpotifyPlaying";
 
 export const metadata:Metadata = {
     title: "About",
@@ -48,6 +49,8 @@ export default function About()
                             </p>
                             <a className="m-4 text-base text-highlight-2 underline underline-offset-4" 
                             href="/assets/files/Resume-Jiaming Wang.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+
+                            <SpotifyPlaying/>
                         </div>
                     </div>
                 </main>
