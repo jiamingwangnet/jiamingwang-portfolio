@@ -45,6 +45,14 @@ body {
     animation: a-fly-out-r-l 380ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards;
 }
 
+.fadeOut {
+    animation: fadeOut 380ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards;
+}
+
+.infinite-spin {
+    animation: spin 400ms linear infinite;
+}
+
 @keyframes a-fly-in-l-r {
     from {
         transform: translateX(-100vw);
@@ -106,5 +114,39 @@ body {
     to {
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+@keyframes fadeIn70 {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    to {
+        opacity: 0.7;
+        visibility: visible;
+    }
+}
+
+@keyframes fadeOut70 {
+    from {
+        opacity: 0.7;
+        visibility: visible;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
     }
 }

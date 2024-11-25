@@ -7,7 +7,8 @@
             "image": "/assets/images/Snake.png",
             "link": "https://github.com/jiamingwangnet/SnakeAI",
             "date": "19/6/2023",
-            "type": ["Machine Learning", "AI", "Simulation", "Game"]
+            "type": ["Machine Learning", "AI", "Simulation", "Game"],
+            "ongoing": true
         },
         {
             "url": "number-classifier",
@@ -16,7 +17,8 @@
             "image": "/assets/images/numberclassifier.png",
             "link": "https://github.com/jiamingwangnet/number-classifier",
             "date": "18/12/2022",
-            "type": ["Machine Learning", "AI", "Image Recognition"]
+            "type": ["Machine Learning", "AI", "Image Recognition"],
+            "ongoing": false
         },
         {
             "url":"snekos",
@@ -25,7 +27,8 @@
             "image": "/assets/images/snekos.png",
             "link": "https://github.com/jiamingwangnet/snekos",
             "date": "2/11/2022",
-            "type": ["Operating System", "Game"]
+            "type": ["Operating System", "Game"],
+            "ongoing": false
         },
         {
             "url":"wonton-engine",
@@ -34,7 +37,8 @@
             "image": "/assets/images/wontonengine.png",
             "link": "https://github.com/jiamingwangnet/WontonEngine",
             "date": "12/9/2023",
-            "type": ["Game Engine", "Graphics", "Game", "In Progress"]
+            "type": ["Game Engine", "Graphics", "Game", "In Progress"],
+            "ongoing": true
         },
         {
             "url":"cube-shooter",
@@ -43,7 +47,8 @@
             "image": "/assets/images/cubeshooter.png",
             "link": "/projects/cube-shooter/download",
             "date": "3/7/2022",
-            "type": ["Game"]
+            "type": ["Game"],
+            "ongoing": false
         },
         {
             "url":"lights-out",
@@ -52,7 +57,8 @@
             "image": "/assets/images/lightsout.png",
             "link": "/projects/lights-out/download",
             "date": "23/2/2022",
-            "type": ["Game", "Game Jam"]
+            "type": ["Game", "Game Jam"],
+            "ongoing": false
         },
         {
             "url":"chat-app",
@@ -61,7 +67,8 @@
             "image": "/assets/images/chatapp.png",
             "link": "https://chat.jiamingwang.net",
             "date": "27/1/2023",
-            "type": ["Social", "Web App"]
+            "type": ["Social", "Web App"],
+            "ongoing": false
         }
     ]
 }

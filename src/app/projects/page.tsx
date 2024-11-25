@@ -80,7 +80,9 @@ export default function Projects()
                     
                             </div>
                         </div>
-                        <div className='md:grid hidden w-5/12 overflow-visible'>
+                        <div className='md:grid hidden w-5/12 overflow-visible' style={{
+                            perspective: "36rem",
+                        }}>
                             {
                                 ProjectData.projects.map((proj:Project, idx:number) => {
                                     projImageMap.current[proj.url] = idx;
@@ -90,26 +92,26 @@ export default function Projects()
                                             <img src={proj.image} alt="display" 
                                                 className="md:block relative top-[-5px] left-[-5px] h-[calc(100%+10px)] min-w-[calc(100%+10px)] object-cover col grid-rows-1 rounded-2xl blur-[10px]" 
                                                 style={{
-                                                    animation: projImageStates[idx] ? "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeIn" : 
+                                                    animation: projImageStates[idx] ? "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeIn70" : 
                                                     (hasHovered ? "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeOut" : ""),
                                                     visibility: "hidden",
                                                     opacity: 0,
                                                     gridColumn: 1,
                                                     gridRow: 1,
-                                                    transform: "translate3d(0,0,0)", // force gpu acceleration
+                                                    transform: "rotate3d(0,1,0,5deg) translate3d(0,0,0)", // force gpu acceleration
                                                     backfaceVisibility: "hidden",
                                                     perspective: "1000",
                                             }}/>
                                             <img src={proj.image} alt="display" 
                                                 className="md:block h-full w-full object-cover col grid-rows-1 rounded-2xl" 
                                                 style={{
-                                                    animation: projImageStates[idx] ? "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeIn" : 
+                                                    animation: projImageStates[idx] ? "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeIn70" : 
                                                     (hasHovered ? "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeOut" : ""),
                                                     visibility: "hidden",
                                                     opacity: 0,
                                                     gridColumn: 1,
                                                     gridRow: 1,
-                                                    transform: "translate3d(0,0,0)", // force gpu acceleration
+                                                    transform: "rotate3d(0,1,0,5deg) translate3d(0,0,0)", // force gpu acceleration
                                                     backfaceVisibility: "hidden",
                                                     perspective: "1000",
                                             }}/>

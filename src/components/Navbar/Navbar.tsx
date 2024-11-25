@@ -11,7 +11,7 @@ import { MenuFont } from "@/app/fonts";
 import TransitionLink from "../TransitionLink/TransitionLink";
 import {ORIGINAL_RATE, SetRate, NEW_RATE} from "@/app/globals";
 
-export default function Navbar({contentClass="trContent"}:{contentClass?:string})
+export default function Navbar({contentClasses=["trContent","fadeOutContent"]}:{contentClasses?:string[]})
 {
     const mlist:RefObject<HTMLUListElement> = useRef(null);
 
@@ -56,22 +56,22 @@ export default function Navbar({contentClass="trContent"}:{contentClass?:string}
             <div className="flex justify-center h-12 lg:pt-5">
                 <div className="m-2 flex items-center justify-between w-[96%] z-30">
                     <div>
-                        <TransitionLink href="/" useClass elements={[contentClass]} animations={[{name: "fly-out-l-r", duration: 380}]}
+                        <TransitionLink href="/" useClass elements={contentClasses} animations={[{name: "fly-out-l-r", duration: 380}, {name:"fadeOut",duration:380}]}
                             onClick={e => {setClick(!click)}}>
                             <Image 
                                 priority
                                 src={Logo}
                                 alt={"Logo"}
                                 className="m-3"
-                                width={35}
-                                height={35}
+                                width={40}
+                                height={40}
                             />
                         </TransitionLink>
                     </div>
 
                     <div>
                         <ul className="flex items-center list-none">
-                            <li style={{animation: showMenu ? "spin 250ms cubic-bezier(.26,.84,.4,1.01) forwards" : "spinback 250ms cubic-bezier(.26,.84,.4,1.01) forwards"}}>
+                            <li style={{animation: showMenu ? "spin 250ms cubic-bezier(.26,.84,.4,1.01) forwards" : "spinback 250ms cubic-bezier(.26,.84,.4,1.01) forwards", transformOrigin:"50% 40%"}}>
                                 <button onClick={toggle}>
                                     <Image
                                         priority
@@ -98,7 +98,7 @@ export default function Navbar({contentClass="trContent"}:{contentClass?:string}
                                             showMenu ? `drop 250ms cubic-bezier(.26,.84,.4,1.01) ${idx * 100}ms forwards` : 
                                             `fly 250ms cubic-bezier(.57,-0.03,.94,.22) ${idx * 100}ms forwards`, transform: "translateY(-100vh)"}}>
                                             
-                                                <TransitionLink href={value.url} elements={[contentClass]} useClass animations={[{name:"fly-out-l-r",duration:380}]}
+                                                <TransitionLink href={value.url} elements={contentClasses} useClass animations={[{name:"fly-out-l-r",duration:380}, {name:"fadeOut",duration:380}]}
                                                     onClick={e => {setClick(!click)}}
                                                 >{value.name}</TransitionLink>
     

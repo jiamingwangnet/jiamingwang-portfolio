@@ -48,13 +48,13 @@
     }
 
     to {
-        transform: rotateZ(90deg);
+        transform: rotateZ(-90deg);
     }
 }
 
 @keyframes spinback {
     from {
-        transform: rotateZ(90deg);
+        transform: rotateZ(-90deg);
     }
 
     to {

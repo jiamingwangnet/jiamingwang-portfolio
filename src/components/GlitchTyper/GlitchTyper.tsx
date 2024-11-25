@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const RandLetter = () => {
-    const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*";
+    const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*{}[]<>=+";
     const letter = Math.floor(Math.random() * letters.length);
     const cap = Math.floor(Math.random() * 2);
 

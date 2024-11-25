@@ -7,4 +7,5 @@ export default interface Project
     link:string;
     date:string;
     type:string[];
+    ongoing:boolean;
 }

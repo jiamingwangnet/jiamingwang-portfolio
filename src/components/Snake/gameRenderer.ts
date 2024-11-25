@@ -274,6 +274,8 @@ export default class Game
             if(intersects.length > 0)
             {
                 const pos = intersects[0].object.name.split(' ');
+                if(this.board.grid[parseInt(pos[1]) * this.board.width + parseInt(pos[0])] === "snake") return; // prevent placing apple on snake
+
                 this.board.lastApplePos = this.board.applePos;
                 this.board.applePos = {x: parseInt(pos[0]), y: parseInt(pos[1]) };
             }

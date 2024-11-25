@@ -46,7 +46,7 @@ export default function ProjModal({params}:Props)
                     <tbody>
                         <tr>
                             <th className={`text-xl pr-8 ${TitleFont.className} font-bold text-left`}>Date</th>
-                            <td className="text-lg break-all"><Typer startDelay={400} typeDelay={10}>{proj.date}</Typer></td>
+                            <td className="text-lg break-all"><Typer startDelay={400} typeDelay={10}>{proj.date + (proj.ongoing ? " - Now" : "")}</Typer></td>
                         </tr>
                         <tr>
                             <th className={`text-xl pr-8 ${TitleFont.className} font-bold text-left`}>Link</th>
