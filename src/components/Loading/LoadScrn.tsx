@@ -10,7 +10,7 @@ export default function LoadScrn({loading}:{loading:boolean}) {
                 style={{animation: loading ? "" : "fadeOut 480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards"}}>
                 <div>
                     <h1 className={`md:text-5xl text-4xl font-thin ${TitleFont.className}`}><span className="font-bold">J</span>iaming <span className="font-bold">W</span>ang</h1>
-                    <p className={`font-thin md:text-xl text-sm ${TitleFont.className} text-center m-2`}>Loading...</p>
+                    {/* <p className={`font-thin md:text-xl text-sm ${TitleFont.className} text-center m-2`}>Loading...</p> */}
                     <div className="h-5/6 flex justify-center items-center">
                         <Image 
                             priority

@@ -9,23 +9,25 @@ export default function Typer(
         typeDelay
     }:
     {
-        children:string,
+        children:string | JSX.Element,
         startDelay:number,
         typeDelay: number
     }
 )
 {
+    const childText:string = typeof(children) === "string" ? children : children.props.children;
+
     const [curText, setCurText] = useState("");
 
     useEffect(() => {
         setTimeout(() => {
-            if(curText === children) return;
+            if(curText === childText) return;
 
-            setCurText(curText + children[curText.length]);
+            setCurText(curText + childText[curText.length]);
         }, curText.length === 0 ? startDelay : typeDelay);
     });
 
     return (<>
-        &#8203;{curText}<span className={`border-r w-0 ml-1 ${curText === children ? "hidden" : "inline"}`}></span>
+        &#8203;{curText}<span className={`border-r w-0 ml-1 ${curText === childText ? "hidden" : "inline"}`}></span>
     </>);
 }

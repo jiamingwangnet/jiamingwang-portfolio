@@ -42,6 +42,10 @@ export default function Navbar({contentClasses=["trContent","fadeOutContent"]}:{
             url: "/projects"
         },
         {
+            name: "Music",
+            url: "/music"
+        },
+        {
             name: "Contact", 
             url: "/contact"
         },

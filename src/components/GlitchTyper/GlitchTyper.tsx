@@ -19,15 +19,18 @@ export default function GlitchTyper(
         endless = false,
     }:
     {
-        children:string,
+        children:string | JSX.Element[],
         startDelay:number,
         switchDelay: number,
         typeDelay: number,
-        endless?: boolean
+        endless?: boolean,
     }
 )
 {
-    const [curText, setCurText] = useState<string[]>(new Array(children.length).fill(''));
+    const isString = typeof(children) === "string";
+    const typedText:any[] = isString ? children.split('') : children;
+
+    const [curText, setCurText] = useState<any[]>(new Array(typedText.length).fill(''));
 
     const idx = useRef(-1);
     const [counter, setCounter] = useState(0);
@@ -53,7 +56,7 @@ export default function GlitchTyper(
             else
             {
                 setCurText(curText.map((c, i) => {
-                    return i <= idx.current ? children[i] : (children[i] === ' ' ? ' ' : RandLetter());
+                    return i <= idx.current ? typedText[i] : (typedText[i] === ' ' ? ' ' : RandLetter());
                 }));
             }
 
@@ -62,6 +65,6 @@ export default function GlitchTyper(
     }, [counter]);
 
     return (<>
-        {curText.join('')}
+        {isString ? curText.join('') : curText}
     </>);
 }

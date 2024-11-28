@@ -1,0 +1,8 @@
+.soundcloud-text {
+    left: 0px;
+    transition: 50ms;
+}
+
+.soundcloud-text:hover {
+    left: 4px;
+}

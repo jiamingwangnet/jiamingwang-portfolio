@@ -83,6 +83,24 @@ export default function Projects()
                         <div className='md:grid hidden w-5/12 overflow-visible' style={{
                             perspective: "36rem",
                         }}>
+                            <div className="md:block relative top-[-5px] left-[-5px] h-[calc(100%+10px)] min-w-[calc(100%+10px)] object-cover col grid-rows-1 rounded-2xl bg-bg-color"
+                                    style={{
+                                        animation: hasHovered ? "480ms cubic-bezier(.26,.84,.4,1.01) 0ms forwards fadeOut" : "",
+                                        opacity: 0.7,
+                                        gridColumn: 1,
+                                        gridRow: 1,
+                                        transform: "rotate3d(0,1,0,5deg) translate3d(0,0,0)", // force gpu acceleration
+                                        backfaceVisibility: "hidden",
+                                        perspective: "1000",
+                                    }}>
+
+                                    <div className="h-full w-full flex justify-center items-center">
+                                    <video loop autoPlay width="400" height="400" className="opacity-80 blcok m-auto">
+                                        <source src="/assets/videos/cube_load.webm" type="video/webm" />
+                                    </video>
+                                    </div>
+
+                            </div>
                             {
                                 ProjectData.projects.map((proj:Project, idx:number) => {
                                     projImageMap.current[proj.url] = idx;

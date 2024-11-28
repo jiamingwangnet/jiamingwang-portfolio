@@ -156,8 +156,10 @@ export default class Game
             this.composer.addPass( renderPass );
 
             this.composer.addPass(new UnrealBloomPass(new THREE.Vector2(this.width, this.height),0.4, 0, 0.1));
+
             this.afterImage = new AfterimagePass(0.75);
             this.composer.addPass(this.afterImage);
+
             this.composer.addPass(new FilmPass(1));
 
             const outputPass = new OutputPass();
